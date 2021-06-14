@@ -2,6 +2,7 @@
 api_key_weather="31ca2f423976763187fe613d8acb6ae4"
 
 $(document).ready(function () {
+    $('img').hide();
     $('.btn').click(function () { 
         city=$('.city_search').val();
         
@@ -18,6 +19,8 @@ $(document).ready(function () {
                 $('.city').text(res.name+": "+res.weather[0].main);
                 $('.temperature').text(tempF+"°F");
                 $('.location').html("Coordenadas: Longitud "+res.coord.lon+", Latitud: "+res.coord.lat);
+                $('img').show();
+                $('img').attr("src", "http://openweathermap.org/img/w/"+res.weather[0].icon+".png");
             }, 'json'); 
         }
     });    
