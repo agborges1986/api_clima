@@ -10,7 +10,7 @@ $(document).ready(function () {
             alert("Ingrese el nombre de una ciudad")
         }else{
         /* In this section  excecute de API call*/
-        url="http://api.openweathermap.org/data/2.5/weather?q="+city+"&&appid="+api_key_weather
+        url="https://api.openweathermap.org/data/2.5/weather?q="+city+"&&appid="+api_key_weather
             /* alert(url) */
             $.get(url, function(res) {
                 // your code here
@@ -20,7 +20,7 @@ $(document).ready(function () {
                 $('.temperature').text(tempF+"°F");
                 $('.location').html("Coordenadas: Longitud "+res.coord.lon+", Latitud: "+res.coord.lat);
                 $('img').show();
-                $('img').attr("src", "http://openweathermap.org/img/w/"+res.weather[0].icon+".png");
+                $('img').attr("src", "https://openweathermap.org/img/w/"+res.weather[0].icon+".png");
             }, 'json'); 
         }
     });    
